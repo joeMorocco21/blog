@@ -1,0 +1,6 @@
+#redirection ok
+RewriteEngine On
+#si on a pas de fichier existent
+RewriteCond %{REQUEST_FILENAME} !-f 
+#renvoyer sur public/index
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]

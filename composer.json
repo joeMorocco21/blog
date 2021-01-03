@@ -1,0 +1,17 @@
+{
+    "name": "elaskri/mvc",
+    "authors": [
+        {
+            "name": "Youssef",
+            "email": "elaskri.youssef.fr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Router\\": "routes/",
+            "App\\": "app/",
+            "Database\\": "database/"
+        }
+    },
+    "require": {}
+}
