@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simplon Blog</title>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="stylesheet" href="<?= SCRIPTS . 'css' . DIRECTORY_SEPARATOR . 'bootstrap.css' ?>">
     <link rel="stylesheet" href="<?= SCRIPTS . 'css' . DIRECTORY_SEPARATOR . 'style.css' ?>">
 </head>
@@ -22,4 +23,44 @@ $(document).ready(function () {
   $('#carouselExampleIndicators').find('.carousel-item').first().addClass('active');
 });
 </script>
+<footer class="bg-light mt-5">
+<div class="col-lg-12 col-md-12 col-sm-12 mt-5 footer">
+<p>Toutes les droits sont résérver 2021 <i class="far fa-copyright"></i></p>
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <a href="#">Contactez-nous</a>
+  
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <a href="#">Politique de confidentialité</a>
+  
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4">
+  <a href="#">Mentions légales</a>
+ 
+</div>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 social mt-5">
+
+<h6>suivez nous sur les réseaux sociaux</h6>
+<div class="row">
+<div class="col-lg-4 col-md-4 col-sm-4">
+<img src="http://localhost/mvc/ressources/file/logo.png" class="logos" alt="">
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1">
+<i class="fab fa-facebook"></i>
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1">
+<i class="fab fa-instagram"></i>
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1">
+<i class="fab fa-linkedin"></i>
+</div>
+<div class="col-lg-1 col-md-1 col-sm-1">
+<i class="fab fa-twitter"></i>
+</div>
+<div class="col-lg-4 col-md-4 col-sm-4"></div>
+</div>
+</div>
+</footer>
 </html>

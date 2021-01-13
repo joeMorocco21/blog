@@ -1,11 +1,18 @@
 <?php foreach($params['post']->getImage() as $img):?>
-<img src="<?= $img->img_url  ?>" alt="">
+<div class="col-lg-12 col-md-12 col-sm-12 mt-5 title-one">
+    <h3 class=""><?= $params['post']->title ?></h3>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 mt-5 ">
+    <img class="showImage" src="<?= $img->img_url  ?>" alt="">
+</div>
 <?php endforeach ?>
 <?php foreach($params['post']->getAuteur() as $atr):?>
-<h5>posté par <?= $atr->nom  ?></h5>
+<div class="col-lg-12 col-md-12 col-sm-12 mt-3 ">
+    <h5 class="auteur">posté par <?= $atr->nom  ?> le <?= $params['post']->getCreateAt() ?></h5>
+</div>
 <?php endforeach ?>
-<h1><?= $params['post']->title ?></h1>
-<p><?= $params['post']->content ?></p>
+<div class="col-lg-12 col-md-12 col-sm-12 mt-3 ">
+    <p><?= $params['post']->content ?></p>
 <div>
 <?php
 foreach($params['post']->getTags() as $tag):
@@ -35,20 +42,20 @@ foreach($params['post']->getCat() as $cat):
 </div>
 <?php endforeach ?>
 </div>
-<form class="mt-5" method="post" action="../comment">
+<form class="mt-5" method="post" action="../comment" id="demo-form">
 <input type="hidden" name="post_id" value="<?= $params['post']->id ?>">
 <div class="form-group">
-<label for="name">Nom:</label>
+<label for="name">Nom*</label>
 <input type="text" name="nom" id="name" placeholder="Votre Nom" class="form-control" required>
 </div> 
 <div class="form-group">
-<label for="email">Email</label>
+<label for="email">Email*</label>
 <input type="email" name="email" id="email" placeholder="Votre Email" class="form-control" required>
 </div> 
 <div class="form-group">
-<label for="comment">Votre commentaire</label>
+<label for="comment">Votre commentaire (1000 lettres max)*</label>
 <textarea name="comment" id="comment" cols="30" rows="10" class="form-control" required></textarea>
 </div> 
-<script src="https://www.google.com/recaptcha/api.js?render=6LeSYc0UAAAAAGMsQaQAATvvR5yIt_3rI7uSVGsY"></script>
 <button class="btn btn-primary">Commenter</button>
 </form>
+<div class="g-recaptcha brochure__form__captcha" data-sitekey="6LcOTyIaAAAAANSyvtDRvn3P-Qp5YO7EXEh_EbTQ"></div>

@@ -1,4 +1,5 @@
-<h1><?= $params['post']->title ?? 'Créer un nouvelle article'  ?></h1>
+<a href="/mvc/admin/posts" class="btn btn-success mt-2">retour</a>
+<h1 class="mt-1"><?= $params['post']->title ?? 'Créer un nouvelle article'  ?></h1>
 <form method="post" action=<?= isset($params['post']) ? "/mvc/admin/posts/edit/{$params['post']->id}" : 
 "/mvc/admin/posts/create"  ?> enctype="multipart/form-data">
 <div class="form-group">

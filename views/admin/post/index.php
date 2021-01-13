@@ -3,7 +3,9 @@
 <?php endif ?>
 <h1>Administration des articles</h1>
 <a href="/mvc/admin/posts/create" class="btn btn-info">Ajouter un article</a>
-<table class="table table-dark">
+<a href="/mvc/admin/posts/images" class="btn btn-info">gerer les images <i class="far fa-file-image"></i></a>
+<a href="/mvc/admin/cat" class="btn btn-info">gerer les categories</a>
+<table class="table table-dark mt-5">
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -24,7 +26,7 @@
       <a href="../admin/posts/edit/<?= $post->id ?>" class="btn btn-warning">Modifier <i class='fas fa-edit'></i></a>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12">
-      <form method="POST" action="../admin/posts/delete/<?= $post->id ?>">
+      <form method="POST" action="../admin/posts/delete/<?= $post->id ?>" onsubmit="return confirm('Vous êtes sûr de vouloir supprimer cet article ?');">
       <button type="submit" class="btn btn-danger">Supprimer <i class="fas fa-trash-alt"></i></button>
       </form>
       </div>

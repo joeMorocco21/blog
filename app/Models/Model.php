@@ -66,7 +66,7 @@ abstract class Model
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id", $data);
     }
 
-    public function delete(int $id):bool
+    public function delete(int $id)
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
     }
@@ -86,7 +86,7 @@ abstract class Model
             {
                 var_dump($stmt = $this->db->getPDO()->$method($sql));
               var_dump($stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]));
-                 return var_dump($stmt->execute($param));die();
+                 return var_dump($stmt->execute($param));
             }
         
         //si le single est null on aura une Select->fetchAll() else une Select->fetch()

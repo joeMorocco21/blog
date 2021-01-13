@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="http://localhost/mvc/ressources/file/logo.png" class="logo" alt=""></a>
+  <a class="navbar-brand" href="#"><img src="http://localhost/mvc/ressources/file/logo.png" class="logos" alt=""></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -37,13 +37,21 @@
         <a class="nav-link" href="./"><?= $_SESSION["name"]; ?> <span class="sr-only">(current)</span></a>
       </li>
       <?php endif ?>
-      <li class="nav-item active">
       <?php if(isset($_SESSION['auth'])): ?>
-        <a class="nav-link" href="http://localhost/mvc/login/logout">Se déconnecter <span class="sr-only">(current)</span></a>
-        <?php else: ?>
-        <a class="nav-link" href="http://localhost/mvc/login">Se connecter <span class="sr-only">(current)</span></a>
-        <?php endif ?>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Options
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="http://localhost/mvc/admin/posts">Administration</a>
+          <a class="dropdown-item" href="http://localhost/mvc/login/logout">Se deconnecter</a>
+        </div>
       </li>
+      <?php else: ?>
+      <li class="nav-item active">
+         <a class="nav-link" href="http://localhost/mvc/login">Se connecter <span class="sr-only">(current)</span></a>
+      </li>
+     <?php endif ?>
     </ul>
   </div>
 </nav>

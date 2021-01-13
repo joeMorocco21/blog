@@ -2,6 +2,7 @@
 namespace App\Controllers;
 
 use App\Models\User;
+use App\Validation\Validator;
 
 class UserController extends Controller
 {
@@ -11,6 +12,17 @@ class UserController extends Controller
     }
     public function loginPost()
     {
+        $validator = new Validator($_POST);
+        $errors = $validator->validate
+        ([
+            'email' => ['required', 'min:10'],
+            'password' => ['required', 'min:5']
+        ]);
+        if ($errors) {
+            $_SESSION['errors'][] = $errors;
+            header('Location: http://localhost/mvc/login');
+            exit;
+        }
         $user = (new User($this->getDB()))->getByUsername($_POST['email']);
         if(password_verify($_POST['password'], $user->password))
         {
